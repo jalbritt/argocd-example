@@ -1,0 +1,9 @@
+ApiVersion: argoproj.io/v1alpha1
+Kind: Application
+Metadata:
+  Name: app-of-apps
+  Namespace: argocd
+Spec:
+    Project: default
+    Source:
+        RepoURL: 

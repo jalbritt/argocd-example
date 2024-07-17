@@ -1,0 +1,12 @@
+ApiVersion: v1
+Kind: Service
+Metadata:
+  Name: hello-world-service
+  Namespace: hello-world
+Spec:
+    Selector:
+        App: hello-world
+    Ports:
+        - Protocol: TCP
+        Port: 80
+        TargetPort: 8080

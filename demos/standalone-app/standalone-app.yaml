@@ -1,0 +1,18 @@
+ApiVersion: argoproj.io/v1alpha1
+Kind: Application
+Metadata:
+  Name: standalone-app
+  Namespace: argocd
+Spec:
+  project: demos
+  source:
+    repoURL: 'https://github.com/jalbritt/argocd-demo.git'
+    targetRevision: HEAD
+    path: demos/standalone-app
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

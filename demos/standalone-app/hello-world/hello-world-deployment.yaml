@@ -1,0 +1,23 @@
+ApiVersion: apps/v1
+Kind: Deployment
+Metadata:
+  Name: hello-world-deployment
+  Namespace: hello-world
+  Labels:
+    App: hello-world
+Spec:
+    Replicas: 1
+    Selector:
+        MatchLabels:
+        App: hello-world
+    Template:
+        Metadata:
+        Labels:
+            App: hello-world
+        Spec:
+        Containers:
+        - Name: hello-world
+            Image: busybox
+            Command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 3600']
+            Ports:
+            - ContainerPort: 8080

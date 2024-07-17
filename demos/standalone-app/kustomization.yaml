@@ -1,0 +1,6 @@
+ApiVersion: kustomize.config.k8s.io/v1beta1
+Kind: Kustomization
+Metadata:
+  Name: standalone-app-kustomization
+Resources:
+  - hello-world/

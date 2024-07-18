@@ -6,6 +6,8 @@ minikube start
 # Install ArgoCD
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -f build/argo-resources/argocd-clusterrole.yaml
+kubectl apply -f build/build/build/build/build/build/build/build/argo-resources/argocd-clusterrolebinding.yaml
 
 # Wait for ArgoCD server to be ready
 echo "Waiting for ArgoCD server to be ready..."

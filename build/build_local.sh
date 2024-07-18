@@ -7,7 +7,7 @@ minikube start
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl apply -f build/argo-resources/argocd-clusterrole.yaml
-kubectl apply -f build/build/build/build/build/build/build/build/argo-resources/argocd-clusterrolebinding.yaml
+kubectl apply -f build/argo-resources/argocd-clusterrolebinding.yaml
 
 # Wait for ArgoCD server to be ready
 echo "Waiting for ArgoCD server to be ready..."
@@ -25,6 +25,9 @@ argocd login localhost:8080 --username admin --password $ARGO_PWD --insecure
 
 # Create a project for our demos
 argocd proj create demo-project -d https://kubernetes.default.svc,argocd
+
+# Add the public repo as source
+argocd proj add-source demo-project https://github.com/jalbritt/argocd-example.git
 
 # Create the argo app
 argocd app create argocd \
@@ -45,13 +48,13 @@ argocd app create standalone-app \
     --sync-policy automated
 
 # Create the app-of-apps
-# argocd app create app-of-apps \
-#     --project demo-project \
-#     --repo https://github.com/jalbritt/argocd-example.git \
-#     --path demos/app-of-apps \
-#     --dest-server https://kubernetes.default.svc \
-#     --dest-namespace argocd \
-#     --sync-policy automated
+argocd app create app-of-apps \
+    --project demo-project \
+    --repo https://github.com/jalbritt/argocd-example.git \
+    --path demos/app-of-apps \
+    --dest-server https://kubernetes.default.svc \
+    --dest-namespace argocd \
+    --sync-policy automated
 
 echo "ArgoCD setup complete. Access the UI at http://localhost:8080"
 echo "Username: admin"

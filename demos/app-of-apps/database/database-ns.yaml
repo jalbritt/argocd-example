@@ -1,4 +1,4 @@
-ApiVersion: v1
-Kind: Namespace
-Metadata:
-  Name: database
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: database

@@ -3,4 +3,4 @@ Kind: Kustomization
 Metadata:
   Name: standalone-app-kustomization
 Resources:
-  - hello-world/
+  - hello-world

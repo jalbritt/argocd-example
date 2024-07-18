@@ -1,4 +1,4 @@
-ApiVersion: v1
-Kind: Namespace
-Metadata:
-  Name: hello-world
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hello-world

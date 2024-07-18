@@ -24,6 +24,15 @@ argocd login localhost:8080 --username admin --password $ARGO_PWD --insecure
 # Create a project for our demos
 argocd proj create demo-project -d https://kubernetes.default.svc,argocd
 
+# Create the argo app
+argocd app create argocd \
+   --project demo-project \
+   --repo https://github.com/jalbritt/argocd-example.git \
+   --path build/argo-resources \
+   --dest-server https://kubernetes.default.svc \
+   --dest-namespace argocd \
+   --sync-policy automated
+
 # Create the standalone app
 argocd app create standalone-app \
     --project demo-project \

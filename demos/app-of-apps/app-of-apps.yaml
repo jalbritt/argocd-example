@@ -1,9 +1,9 @@
-ApiVersion: argoproj.io/v1alpha1
-Kind: Application
-Metadata:
-  Name: app-of-apps
-  Namespace: argocd
-Spec:
-    Project: default
-    Source:
-        RepoURL: 
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+spec:
+    project: demo-project
+    source:
+        repoURL: "https://github.com/jalbritt/argocd-example.git"

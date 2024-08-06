@@ -4,6 +4,5 @@ metadata:
   name: app-of-apps
   namespace: argocd
 spec:
-    project: demo-project
-    source:
-        repoURL: "https://github.com/jalbritt/argocd-example.git"
+  source:
+    repoURL: "https://github.com/jalbritt/argocd-example.git"

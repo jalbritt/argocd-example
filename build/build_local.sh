@@ -32,6 +32,7 @@ argocd app create argocd-app \
    --dest-namespace argocd \
    --sync-policy automated
 
+sleep 10
 # Create the standalone app
 argocd app create standalone-app \
     --repo https://github.com/jalbritt/argocd-example \

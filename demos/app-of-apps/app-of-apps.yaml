@@ -8,12 +8,19 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   project: default
-  source:
-    path: demos/app-of-apps
+  sources:
+  - path: demos/app-of-apps
     repoURL: "https://github.com/jalbritt/argocd-example"
     targetRevision: HEAD
-    directory:
-      recurse: true
+  - path: demos/app-of-apps/database
+    repoURL: "https://github.com/jalbritt/argocd-example"
+    targetRevision: HEAD
+  - path: demos/app-of-apps/monitoring
+    repoURL: "https://github.com/jalbritt/argocd-example"
+    targetRevision: HEAD
+  - path: demos/app-of-apps/server
+    repoURL: "https://github.com/jalbritt/argocd-example"
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

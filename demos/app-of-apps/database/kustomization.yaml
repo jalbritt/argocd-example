@@ -8,3 +8,13 @@ resources:
   - database-ns.yaml
   - postgres-pv.yaml
   - postgres-pvc.yaml
+configMapGenerator:
+  - name: postgres-config
+    literals:
+    - POSTGRES_DB=example-db
+    - POSTGRES_USER=myuser
+secretGenerator:
+  - name: postgres-secret
+    literals:
+    - POSTGRES_PASSWORD=postgrespass
+    type: Opaque

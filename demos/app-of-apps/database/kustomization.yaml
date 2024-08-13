@@ -18,3 +18,12 @@ secretGenerator:
     literals:
     - POSTGRES_PASSWORD=postgrespass
     type: Opaque
+replacements:
+  - source:
+      kind: ConfigMap
+      name: postgres-config
+    targets:
+      - select:
+          kind: Deployment
+        fieldPaths:
+          - spec.template.spec.containers.[name=postgres].envFrom.[configMapRef.name=postgres-config].configMapRef.name

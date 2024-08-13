@@ -24,7 +24,7 @@ ARGO_PWD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath=
 argocd login localhost:8080 --username admin --password $ARGO_PWD --insecure
 
 # Create the argo app
-argocd app create argocd \
+argocd app create argocd-app \
    --repo https://github.com/jalbritt/argocd-example \
    --path build/argo-resources \
    --dest-server https://kubernetes.default.svc \

@@ -1,26 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps
-  namespace: argocd
-spec:
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  project: default
-  sources:
-  - path: demos/app-of-apps
-    repoURL: "https://github.com/jalbritt/argocd-example"
-    targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-status: {}
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
   name: database
   namespace: argocd
 spec:

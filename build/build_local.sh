@@ -47,6 +47,7 @@ argocd app create app-of-apps \
     --dest-namespace argocd \
     --sync-policy automated
 
+sleep 60
 echo "ArgoCD setup complete. Access the UI at http://localhost:8080"
 echo "Username: admin"
 echo "Password: $ARGO_PWD"

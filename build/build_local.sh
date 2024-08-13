@@ -12,6 +12,7 @@ kubectl apply -f build/argo-resources/argocd-clusterrolebinding.yaml
 # Wait for ArgoCD server to be ready
 echo "Waiting for ArgoCD server to be ready..."
 kubectl wait --for=condition=available --timeout=300s deployment/argocd-server -n argocd
+kubectl wait --for=condition=available --timeout=300s deployment/argocd-repo-server -n argocd
 
 # Port forward ArgoCD API server
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
@@ -22,7 +23,7 @@ ARGO_PWD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath=
 
 # Login to ArgoCD
 argocd login localhost:8080 --username admin --password $ARGO_PWD --insecure
-sleep 5
+
 # Create the argo app
 argocd app create argocd-app \
    --repo https://github.com/jalbritt/argocd-example \
@@ -47,7 +48,6 @@ argocd app create app-of-apps \
     --dest-namespace argocd \
     --sync-policy automated
 
-sleep 5
 echo "ArgoCD setup complete. Access the UI at http://localhost:8080"
 echo "Username: admin"
 echo "Password: $ARGO_PWD"

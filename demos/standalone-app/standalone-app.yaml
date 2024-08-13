@@ -4,9 +4,9 @@ metadata:
   name: standalone-app
   namespace: argocd
 spec:
-  project: demo-project
+  project: default
   source:
-    repoURL: 'https://github.com/jalbritt/argocd-example.git'
+    repoURL: 'https://github.com/jalbritt/argocd-example'
     targetRevision: HEAD
     path: demos/standalone-app
   destination:

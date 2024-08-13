@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: demos/app-of-apps
-    repoURL: "https://github.com/jalbritt/argocd-example.git"
+    repoURL: "https://github.com/jalbritt/argocd-example"
     targetRevision: HEAD
   syncPolicy:
     automated:

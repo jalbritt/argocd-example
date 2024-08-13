@@ -18,7 +18,7 @@ secretGenerator:
     literals:
     - POSTGRES_PASSWORD=postgrespass
     type: Opaque
-eplacements:
+replacements:
   - source:
       kind: ConfigMap
       name: postgres-config

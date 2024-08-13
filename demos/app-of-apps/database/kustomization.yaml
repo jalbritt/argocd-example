@@ -24,7 +24,7 @@ replacements:
       name: postgres-config
     targets:
       - select:
-          kind: Deployment
+          kind: StatefulSet
         fieldPaths:
           - spec.template.spec.containers.[name=postgres].envFrom.[configMapRef.name=postgres-config].configMapRef.name
   - source:
@@ -32,6 +32,6 @@ replacements:
       name: postgres-secrets
     targets:
       - select:
-          kind: Deployment
+          kind: StatefulSet
         fieldPaths:
           - spec.template.spec.containers.[name=postgres].envFrom.[secretRef.name=postgres-secret].secretRef.name

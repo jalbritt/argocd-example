@@ -25,7 +25,7 @@ argocd login localhost:8080 --username admin --password $ARGO_PWD --insecure
 
 # Create the argo app
 argocd app create argocd \
-   --repo https://github.com/jalbritt/argocd-example.git \
+   --repo https://github.com/jalbritt/argocd-example \
    --path build/argo-resources \
    --dest-server https://kubernetes.default.svc \
    --dest-namespace argocd \
@@ -33,7 +33,7 @@ argocd app create argocd \
 
 # Create the standalone app
 argocd app create standalone-app \
-    --repo https://github.com/jalbritt/argocd-example.git \
+    --repo https://github.com/jalbritt/argocd-example \
     --path demos/standalone-app \
     --dest-server https://kubernetes.default.svc \
     --dest-namespace argocd \
@@ -41,7 +41,7 @@ argocd app create standalone-app \
 
 # Create the app-of-apps
 argocd app create app-of-apps \
-    --repo https://github.com/jalbritt/argocd-example.git \
+    --repo https://github.com/jalbritt/argocd-example \
     --path demos/app-of-apps \
     --dest-server https://kubernetes.default.svc \
     --dest-namespace argocd \

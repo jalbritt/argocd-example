@@ -17,3 +17,23 @@ spec:
       prune: true
       selfHeal: true
 status: {}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'http://github.com/jalbritt/argocd-example'
+    targetRevision: HEAD
+    path: demos/app-of-apps/monitoring
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+status: {}

@@ -26,7 +26,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'http://github.com/jalbritt/argocd-example'
+    repoURL: 'https://github.com/jalbritt/argocd-example'
     targetRevision: HEAD
     path: demos/app-of-apps/monitoring
   destination:

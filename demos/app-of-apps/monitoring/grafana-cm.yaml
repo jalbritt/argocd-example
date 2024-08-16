@@ -12,7 +12,7 @@ data:
       type: prometheus
       access: proxy  # or 'direct' if Grafana can directly access Prometheus
       orgId: 1
-      url: url: http://prometheus-service.monitoring.svc.cluster.local:9090
+      url: http://prometheus-service.monitoring.svc.cluster.local:9090
       basicAuth: false  # adjust based on Prometheus authentication settings
       isDefault: true
       jsonData:

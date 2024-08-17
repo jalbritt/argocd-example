@@ -36,7 +36,7 @@ sleep 10
 # Create the standalone app
 argocd app create standalone-app \
     --repo https://github.com/jalbritt/argocd-example \
-    --path demos/standalone-app \
+    --path demos/standalone-app/hello-world \
     --dest-server https://kubernetes.default.svc \
     --dest-namespace argocd \
     --sync-policy automated

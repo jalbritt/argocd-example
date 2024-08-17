@@ -1,14 +1,8 @@
-# prometheus-serviceaccount.yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: prometheus
-  namespace: prometheus
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: prometheus-clusterrole
+  namespace: prometheus
 rules:
   - apiGroups: [""]
     resources:
@@ -41,4 +35,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: prometheus
-  namespace: prometheus
+    namespace: prometheus

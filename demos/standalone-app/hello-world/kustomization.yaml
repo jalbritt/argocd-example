@@ -1,8 +1,0 @@
-ApiVersion: kustomize.config.k8s.io/v1beta1
-Kind: Kustomization
-Metadata:
-  Name: hello-world-kustomization
-Resources:
-  - hello-world-ns.yaml
-  - hello-world-deployment.yaml
-  - hello-world-service.yaml

@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/jalbritt/argocd-example'
     targetRevision: HEAD
-    path: demos/standalone-app
+    path: demos/standalone-app/hello-world
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd

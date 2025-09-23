@@ -1,5 +1,5 @@
 # Example ArgoCD Configurations
-This repo contains boilerplate configurations for ArgoCD. Try them out yourself locally using minikube. Just clone the repo and execute thebuild_local.sh script. The script will install minikube, kubectl, and argocd, and then deploy the specified configurations to minikube. Once the argocd server is running, you can access the ArgoCD UI by running the following command by following the link from the output of the build script and using the provided username and password to login.
+This repo contains boilerplate configurations for ArgoCD. 
 ```
 .
 ├── README.md
